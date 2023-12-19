@@ -1020,5 +1020,5 @@ if __name__ == '__main__':
     # Analyzer and Anonymizer
     results = analyzer.analyze(text=text, language="en")
     anonymized_text = anonymizer.anonymize(text=text, analyzer_results=results)
-    print(anonymized_text)
+    print(anonymized_text.text)
 
