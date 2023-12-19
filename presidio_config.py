@@ -1007,6 +1007,18 @@ def run():
     # Initialize the AnonymizerEngine
     anonymizer = AnonymizerEngine()
 
+    return analyzer, anonymizer
+
 if __name__ == '__main__':
-    run()
+    analyzer, anonymizer = run()
+
+    ## Testing anonymization pipeline
+
+    # Define your text
+    text = "Hello, I'm Bob and I live in Vancouver, WA 90101 and my email is bobby@hotmail.com"  # 
+
+    # Analyzer and Anonymizer
+    results = analyzer.analyze(text=text, language="en")
+    anonymized_text = anonymizer.anonymize(text=text, analyzer_results=results)
+    print(anonymized_text)
 
